@@ -21,18 +21,20 @@ function Nav() {
         console.log(`${name} clicked`)
     }
 
+// removed testing IDs for nav
+//  {/* <a data-testid="link" href="/"> */}
+//  {/* <a data-testid="about" href="#about">About Me</a> */}
+
     return (
         <header>
-            <h2>
-                {/* <a data-testid="link" href="/"> */}
+            <h2>               
                 <a href="/">
                     <span role="img" aria-label="camera"> 📸</span> Oh Snap!
                 </a>
             </h2>
             <nav>
                 <ul className="flex-row">
-                    <li className="mx-2">
-                        {/* <a data-testid="about" href="#about">About Me</a> */}
+                    <li className="mx-2">                        
                         <a href="#about">About Me</a>
                     </li>
                     <li>
