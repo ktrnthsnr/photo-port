@@ -6,6 +6,10 @@ Single-page photography portfolio application using React state, props, Hooks, a
 
 * https://github.com/ktrnthsnr/photo-port
 
+## React Website in GitHub
+
+* https://ktrnthsnr..
+
 ## Table of Contents
 
 * [Description](#description)
@@ -56,10 +60,12 @@ React, Node.js, JavaScript, ES6npm, create-react-app, React Testing Library, jes
 
 ## Testing
 
+* see react-testing.md
 
 ## React
 
-
+* see react-CLI-notes.md
+* see react-deploy.md
 
 ## Contribution
 

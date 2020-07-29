@@ -6,16 +6,19 @@ import About from '..';
 // cleans up leftover memory from any prev tests, which may give false results
 afterEach(cleanup);
 
-describe('About component', () => {    
-    // First Test
+
+describe('About component', () => {  
+
+    // First Test, baseline test (npm run test)
     it('renders', () => {
-    render(<About />);
+        render(<About />);
     });
 
-    // Second Test
+    // Second Test, snapshot test (then add this piece and run again, npm run test)
     it('matches snapshot DOM node structure', () => {
         // render About
         const { asFragment } = render(<About />);
         expect(asFragment()).toMatchSnapshot();
-        });
-  })
+    });
+
+})
