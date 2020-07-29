@@ -1,5 +1,5 @@
-// import logo from './logo.svg';
-// import './App.css';
+// import logo from './logo.svg';     default with React installation
+// import './App.css';                default with React installation
 
 import React from 'react';
 import Nav from './components/Nav';

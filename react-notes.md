@@ -3,7 +3,7 @@
 1.  Install the Create React App (CRA) CLI, which will add webpack config and create a dev server.
     $ `npx create-react-app photo-port`
 
-2. Open within the browser and run the following. CRA will create a webpack to bundle up and run a development server, and service worker in the index.js. Also uses Babel to tranpile ES6 to ES5.
+2. Open within the browser and run the following. A Create React App (CRA) will create a webpack to bundle up and run a development server, and service worker in the index.js. Also uses Babel to tranpile ES6 to ES5.
 
 - $ `cd photo-port`
 - $ `npm start`
@@ -24,6 +24,12 @@ You can remove files not used, such as src/logo.svg and app.test.js.
         * import the component
 
     * (Note: You can make changes with the dev server running or `npm start` as changes are hot loaded into the server, changes are dynamic or automatic.)
+
+6. React tests: to create and install the React Test Library and jest-dom npm packages, run
+
+    * $ `npm install @testing-library/react @testing-library/jest-dom --save-dev`
+
+
 
 0. Here are commands that can be used as per package.json
 
