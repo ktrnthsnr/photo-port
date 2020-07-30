@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-// import Modal from '../Modal';
+
+// PhotoList is the parent componet, importing child componet Modal
+import Modal from '../Modal';
 
 const PhotoList = ({ category }) => {
-
+  
+  
   // add hook to maintain state
   const [photos] = useState([
     {
@@ -104,16 +107,47 @@ const PhotoList = ({ category }) => {
 
   const currentPhotos = photos.filter((photo) => photo.category === category);
 
+
+      // modals, useState hook to manage current photo state and make accessible to the Modal component through props
+      const [currentPhoto, setCurrentPhoto] = useState();
+
+      // modals, add hook for Modal
+      const [isModalOpen, setIsModalOpen] = useState(false);
+
+      // modals, adding modal expressions
+        // const toggleModal = (image, i) => {
+        //   setCurrentPhoto({...image, index: i})
+        //   setIsModalOpen(true);
+        // }
+
+        const toggleModal = (image, i) => {
+          setCurrentPhoto({...image, index: i});
+          setIsModalOpen(!isModalOpen);
+        }
+
+       
   return (
-    <div>
+
+   <div>
+      
+      {/* <Modal /> */}
+      {/* <Modal currentPhoto={currentPhoto} />  */}
+      {/* {isModalOpen && <Modal currentPhoto={currentPhoto} />} */}
+      {isModalOpen && (
+  <Modal currentPhoto={currentPhoto} onClose={toggleModal} />
+)}
+
       <div className="flex-row">
         {currentPhotos.map((image, i) => (
+
           <img
             src={require(`../../assets/small/${category}/${i}.jpg`)}
             alt={image.name}
             className="img-thumbnail mx-1"
+            onClick={() => toggleModal(image, i)}
             key={image.name}
           />
+
         ))}
       </div>
     </div>
