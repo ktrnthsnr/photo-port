@@ -1,6 +1,6 @@
 {
   "name": "photo-port",
-  "homepage": "http://ktrnthsnr.github.io/photo-port",
+  "homepage": "https://ktrnthsnr.github.io/photo-port/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,10 +11,9 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start", 
+    "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",   
-    "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
