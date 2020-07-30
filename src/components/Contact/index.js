@@ -19,20 +19,26 @@ function ContactForm() {
         //    // after - added this below
         //    <input type="email" name="email" defaultValue={formState.name} />
 
-
-
         function handleChange(e) {
             // setFormState({...formState, name: e.target.value })
             setFormState({...formState, [e.target.name]: e.target.value })
           }          
-          
+
         //   console.log(formState);
+
+        // function to handle the submission of the form
+            // matches this JSX below: <form id="contact-form" onSubmit={handleSubmit}>
+            // (Note: this is just the front-end, backend is not functional yet.)
+        function handleSubmit(e) {
+            e.preventDefault();
+            console.log(formState);
+          }
 
     // JSX
     return (
             <section>
               <h1>Contact me</h1>
-              <form id="contact-form">
+              <form id="contact-form" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="name">Name:</label>
                         <input type="text" defaultValue={name} onChange={handleChange} name="name" />
