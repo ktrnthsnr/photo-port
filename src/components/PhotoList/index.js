@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 const PhotoList = ({ category }) => {
 
+  // add hook to maintain state
   const [photos] = useState([
     {
       name: 'Grocery aisle',
