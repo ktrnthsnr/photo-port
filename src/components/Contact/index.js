@@ -1,8 +1,11 @@
 // import React from 'react';
 import React, { useState } from 'react';
+import { validateEmail } from '../../utils/helpers';
 
 
 function ContactForm() {
+
+    const [errorMessage, setErrorMessage] = useState('');
 
     // add hook to manage the form data and state
     // const [formState, setFormState] = useState();
@@ -20,8 +23,35 @@ function ContactForm() {
         //    <input type="email" name="email" defaultValue={formState.name} />
 
         function handleChange(e) {
+
+            // add validation for input (place before setFormState)
+            if (e.target.name === 'email') {
+                const isValid = validateEmail(e.target.value);
+                console.log(isValid);
+                // isValid conditional statement
+                if (!isValid) {
+                    setErrorMessage('Your email is invalid.');
+                  }     else {
+                        if (!e.target.value.length) {
+                        setErrorMessage(`${e.target.name} is required.`);
+                        } else {
+                        setErrorMessage('');
+                        }
+                    }
+
+                // console.log('errorMessage', errorMessage);
+            }  
+
+        
+
             // setFormState({...formState, name: e.target.value })
-            setFormState({...formState, [e.target.name]: e.target.value })
+            // setFormState({...formState, [e.target.name]: e.target.value })
+
+            // with error validation
+            if (!errorMessage) {
+                setFormState({ ...formState, [e.target.name]: e.target.value });
+              }
+            
           }          
 
         //   console.log(formState);
@@ -34,6 +64,7 @@ function ContactForm() {
             console.log(formState);
           }
 
+        
     // JSX
     return (
             <section>
